@@ -13,6 +13,7 @@ const AddDeviceForm = () => {
     onSubmit: values => {
 
       const submitData = async () => {
+        console.log("adding device")
         try {
           const { data } = await axios.post("/device", { physicalID: values.physicalID })
           console.log(data)

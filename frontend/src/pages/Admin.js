@@ -15,6 +15,7 @@ const Admin = () => {
   const [allDevices, setAllDevices] = useState([]);
   const [allFarmers, setAllFarmers] = useState([]);
 
+
   useEffect(() => {
 
     // get all devices
@@ -72,7 +73,7 @@ const Admin = () => {
       </div> */}
       {
         filterDevices().map(device => (
-          <DeviceCard {...device} />
+          <DeviceCard {...device} key={device._id} />
         ))
       }
     </div>
@@ -82,7 +83,7 @@ const Admin = () => {
     <>
       {
         allFarmers.map(farmer => (
-          <FarmerCard {...farmer} />
+          <FarmerCard {...farmer} key={farmer._id} />
         ))
       }
     </>

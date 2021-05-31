@@ -2,7 +2,6 @@ const express = require("express");
 const morgan = require("morgan");
 const app = express()
 const cors = require("cors");
-const bodyParser = require("body-parser")
 
 const path = require("path")
 
@@ -15,6 +14,7 @@ const passportSetup = require("./config/passport-setup");
 
 app.use(express.json())
 
+
 app.use(cors());
 
 
@@ -23,7 +23,7 @@ app.use(cookieSession({
   keys: [process.env.cookieKey]
 }))
 
-passport
+//passport
 app.use(passport.initialize());
 app.use(passport.session());
 

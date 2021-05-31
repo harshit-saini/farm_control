@@ -32,7 +32,7 @@ const DeviceSchema = new Schema({
     default: false
   },
   owner: {
-    type: Schema.Types.ObjectId,
+    type: [Schema.Types.ObjectId],
     ref: "User"
   }
 })

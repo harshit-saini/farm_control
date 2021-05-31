@@ -40,12 +40,13 @@ const passportCallbackFunction = async (accessToken, refreshToken, profile, done
       name: profile.displayName,
       profileImgURL: profile.photos[0].value
     })
+    done(null, newUser);
+  } else {
+
+    // if there is a user in the database
     done(null, currentUser);
-    return;
   }
 
-  // if there is a user in the database
-  done(null, currentUser);
 
 }
 
