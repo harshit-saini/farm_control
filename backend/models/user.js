@@ -18,7 +18,11 @@ const userSchema = new Schema({
   location: {
     type: String
   },
-  devices: [DeviceSchema]
+  devices: {
+    type: [Schema.Types.ObjectId],
+    ref: "Device"
+  }
+  // devices: [DeviceSchema]
 })
 
 const User = mongoose.model("User", userSchema);

@@ -42,7 +42,7 @@ router.post("/update/:deviceID", async (req, res, next) => {
 
     // update devices in user
     const user = await User.findOne({ _id: req.body.farmerID });
-    const allDevices = [updatedDevice, ...user.devices]
+    const allDevices = [updatedDevice._id, ...user.devices]
     const updatedUser = await User.findOneAndUpdate({ _id: req.body.farmerID }, { devices: allDevices });
 
     res.json({ message: "device assigned to the user" })

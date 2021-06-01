@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/", async (req, res, next) => {
   console.log("react app requesting for user info")
   if (req.user && req.user.id) {
-    const currentUser = await User.findOne({ _id: req.user.id });
+    const currentUser = await User.findOne({ _id: req.user.id }).populate("devices");
     res.json({ currentUser });
   } else {
     res.json({ error: "no user is logged in" })
@@ -15,7 +15,7 @@ router.get("/", async (req, res, next) => {
 })
 
 router.get("/all", async (req, res, next) => {
-  const allUsers = await User.find({});
+  const allUsers = await User.find({}).populate("devices");
   res.json(allUsers)
 })
 
