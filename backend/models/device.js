@@ -18,7 +18,7 @@ const DeviceSchema = new Schema({
     type: Number
   },
   updatedAt: {
-    type: Date
+    type: String
   },
   isPumpOn: {
     type: Boolean,

@@ -53,4 +53,36 @@ router.post("/update/:deviceID", async (req, res, next) => {
   }
 })
 
+router.post("/edit/:deviceID", async (req, res, next) => {
+  try {
+    const updatedDevice = await Device.findOneAndUpdate({ _id: req.params.deviceID }, { name: req.body.name, isPumpOn: req.body.isPumpOn });
+    res.json(updatedDevice)
+  } catch (error) {
+    res.json(error)
+  }
+})
+
+
+router.get("/data", async (req, res, next) => {
+  try {
+    const d = new Date();
+    d.toLocaleString();
+
+    const updatedDevice = await Device.findOneAndUpdate({ _id: req.query.id }, {
+      moistureLevel: req.query.moisture,
+      updatedAt: d
+    })
+    if (updatedDevice.isPumpOn === true) {
+      res.json({ pump: 1 })
+    } else if (updatedDevice.isPumpOn === false) {
+      res.json({ pump: 0 })
+    }
+  } catch (error) {
+    console.log(error)
+  }
+
+})
+
+
+
 module.exports = router;

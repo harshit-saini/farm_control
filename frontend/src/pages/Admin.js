@@ -9,7 +9,7 @@ import AddDeviceForm from '../components/forms/AddDeviceForm'
 
 const Admin = () => {
 
-  const { path, url } = useRouteMatch();
+  const { url } = useRouteMatch();
 
 
   const [allDevices, setAllDevices] = useState([]);

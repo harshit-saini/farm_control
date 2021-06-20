@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Navbar from '../components/Navbar'
 import { UserContext } from '../contexts/userContext'
-import DeviceCard from '../components/DeviceCard'
+import DeviceCardForFarmer from '../components/DeviceCardForFarmer'
 
 const MyFarm = () => {
 
@@ -16,7 +16,7 @@ const MyFarm = () => {
           {user.devices &&
             user.devices.map(device => (
               <div className="col">
-                <DeviceCard {...device} key={device._id} />
+                <DeviceCardForFarmer {...device} key={device._id} />
               </div>
             ))
           }

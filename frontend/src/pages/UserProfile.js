@@ -44,7 +44,7 @@ const UserProfile = () => {
             <div className="p-5 bg-light rounded">
               <h3>{user.name}</h3>
               <h3>{user._id}</h3>
-              <h3>{user.devices}</h3>
+              {/* <h3>{user.devices}</h3> */}
             </div>
           </div>
         </div>
