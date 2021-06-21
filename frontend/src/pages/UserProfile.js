@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import Navbar from '../components/Navbar'
 import { UserContext } from '../contexts/userContext'
 import styled from 'styled-components'
+import AddLocationForm from '../components/forms/AddLocationForm'
 
 const TOP = styled.div`
 
@@ -48,6 +49,7 @@ const UserProfile = () => {
             </div>
           </div>
         </div>
+        <AddLocationForm location={user.location}/>
       </div>
     </div>
   )

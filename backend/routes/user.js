@@ -19,4 +19,9 @@ router.get("/all", async (req, res, next) => {
   res.json(allUsers)
 })
 
+router.post("/location", async (req,res,next) => {
+  const userWithLocation = await User.findOneAndUpdate({_id: req.user.id}, {location: req.body.location.toLowerCase()})
+  res.json(userWithLocation)
+})
+
 module.exports = router;

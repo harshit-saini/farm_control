@@ -33,6 +33,7 @@ class UserContextProvider extends Component {
   }
 
   render() {
+    console.log("fetching user")
     const { children } = this.props;
 
     return (

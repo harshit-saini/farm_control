@@ -9,26 +9,26 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className="navbar-brand" to="/">Farm Control</Link>
+        <Link className="navbar-brand fw-bold" to="/">Farm Control</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ms-auto d-flex align-items-center">
-            <NavLink className="nav-link" activeclassname="active" to="/" exact>Home</NavLink>
+            <NavLink className="nav-link ms-2" activeclassname="active" to="/" exact>Home</NavLink>
 
             {
               !isAuthenticated &&
-              <a className="nav-link" href="/auth/google">
+              <a className="nav-link  ms-2" href="/auth/google">
                 <button className="btn btn-primary">Login</button>
               </a>
             }
             {
               isAuthenticated &&
               <>
-                <NavLink className="nav-link" activeClassName="active" to="/profile">Profile</NavLink>
-                <NavLink className="nav-link" activeClassName="active" to="/my-farm">My Farm</NavLink>
-                <a className="nav-link" href="/auth/logout">
+                <NavLink className="nav-link ms-2" activeClassName="active" to="/profile">Profile</NavLink>
+                <NavLink className="nav-link ms-2" activeClassName="active" to="/my-farm">My Farm</NavLink>
+                <a className="nav-link ms-2" href="/auth/logout">
                   <button className="btn btn-secondary">Logout
                 <span className="mx-1">{`(${user.name})`}</span>
                   </button>

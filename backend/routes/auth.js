@@ -8,10 +8,7 @@ router.get("/google", passport.authenticate('google', {
 }))
 
 router.get("/google/redirect", passport.authenticate('google'), (req, res, next) => {
-  res.redirect("/")
-  // res.json({
-  //   name: "harshit saini"
-  // })
+    res.redirect("/")
 })
 
 router.get("/logout", (req, res) => {
