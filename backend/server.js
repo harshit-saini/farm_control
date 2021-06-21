@@ -46,6 +46,7 @@ app.use("/device", require("./routes/device"))
 if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res, next) => {
     const path_to_root_folder = path.resolve();
+    app.use(express.static(path.join(path_to_root_folder, '/frontend/build')))
     res.sendFile(path.resolve(path_to_root_folder, "frontend", "dist", "index.html"));
   })
 } else {
