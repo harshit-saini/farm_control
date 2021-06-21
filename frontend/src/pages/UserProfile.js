@@ -42,14 +42,16 @@ const UserProfile = () => {
 
         <div className="row">
           <div className="col-12 col-md-6 p-3">
-            <div className="p-5 bg-light rounded">
-              <h3>{user.name}</h3>
-              <h3>{user._id}</h3>
-              {/* <h3>{user.devices}</h3> */}
+            <div className="p-5 bg-light rounded" style={{border:"4px solid teal"}}>
+              <div>Name: <h4>{user.name}</h4></div>
+              <div>Unique ID: <h4>{user._id}</h4></div>
+              <div>Number of Devices: <h4>{user.devices.length}</h4></div>
             </div>
           </div>
+          <div className="col-12 col-md-6 p-3">
+            <AddLocationForm location={user.location}/>
+          </div>
         </div>
-        <AddLocationForm location={user.location}/>
       </div>
     </div>
   )

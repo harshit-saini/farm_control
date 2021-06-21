@@ -26,7 +26,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 380px;
+  width:100%;
   padding: 20px 10px;
   margin: auto;
   border-radius: 4px;
@@ -65,7 +65,7 @@ function WeatherCard() {
 
   return (
     <Container>
-      <AppLabel>Check the Weather here</AppLabel>
+      {/* <AppLabel>Check the Weather here</AppLabel> */}
       {city && weather ? (
         <WeatherInfo weather={weather} city={city} />
       ) : (

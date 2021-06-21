@@ -48,7 +48,7 @@ app.use("/", express.static(path.join(path_to_root_folder, "frontend", "build"))
 
 
 // sending the frontend app to the browser
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res, next) => {
     res.sendFile(path.join(path_to_root_folder, "frontend", "build", "index.html"));
   })

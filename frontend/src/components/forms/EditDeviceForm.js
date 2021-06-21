@@ -43,18 +43,18 @@ const EditDeviceForm = ({ name, isPumpOn, _id }) => {
 
   return (
     <div>
-      <form onSubmit={formik.handleSubmit}>
-        <div className="mb-3">
-          <label className="form-label" htmlFor="name">Device Name</label>
+      <form onSubmit={formik.handleSubmit} className="bg-light mt-3">
+        <div className="mb-3 p-2">
+          <label className="form-label" htmlFor="name">Device Name:</label>
           <input className="form-control" name="name" id="name" type="text" placeholder="Enter device name" value={formik.values.name} onChange={formik.handleChange} />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 p-2">
           <div class="form-check form-switch">
             <input ref={checkbox} class="form-check-input" type="checkbox" id="isPumpOn" value={formik.values.isPumpOn} onChange={formik.handleChange} />
             <label class="form-check-label" htmlFor="isPumpOn">Pump Status</label>
           </div>
         </div>
-        <button className="btn btn-primary" type="submit">Submit</button>
+        <button className="btn btn-outline-primary m-2" type="submit">Change</button>
       </form>
 
     </div>

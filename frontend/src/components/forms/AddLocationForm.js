@@ -30,9 +30,9 @@ const AddLocationForm = ({location}) => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <h4 className="text-capitalize">Your Location</h4>
-      <div className="mb-3 bg-light p-2">
-        <label className="form-label" htmlFor="physicalID">Location</label>
+      <h4 className="text-capitalize mb-4">Your Location</h4>
+      <div className="mb-3 bg-light p-2 py-4">
+        <label className="form-label mb-3" htmlFor="physicalID">your farm location is:</label>
         <input
           id="location"
           name="location"
@@ -44,7 +44,7 @@ const AddLocationForm = ({location}) => {
         />
       </div>
 
-      <button className="btn btn-primary" type="submit">Change</button>
+      <button className="btn btn-outline-primary" type="submit">Change</button>
     </form>
   )
 }

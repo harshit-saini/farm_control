@@ -11,7 +11,7 @@ const MyFarm = () => {
     <div>
       <Navbar />
       <div className="container">
-        <div className="border-secondary p-4 bg-light mt-4 vertical-middle my-3"><h6 className="text-center fs-3">This is the place where you can control all the devices of your farm.</h6></div>
+        <div className="border-secondary p-4 bg-light mt-4 vertical-middle my-3"><h6 className="text-center fs-3 text-capitalize text-black-50">This is the place where you can control all the devices of your farm.</h6></div>
         <div className="row row-cols-1 row-cols-md-2 g-4">
           {user.devices &&
             user.devices.map(device => (
