@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const path = require("path")
 
+
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
 const cookieSession = require("cookie-session");
@@ -41,13 +42,15 @@ app.use("/user", require("./routes/user"))
 app.use("/device", require("./routes/device"))
 
 
+const path_to_root_folder = path.resolve();
+console.log(path_to_root_folder)
+app.use("/", express.static(path.join(path_to_root_folder, "frontend", "build")))
+
 
 // sending the frontend app to the browser
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV !== "production") {
   app.get("*", (req, res, next) => {
-    const path_to_root_folder = path.resolve();
-    app.use(express.static(path.join(path_to_root_folder, '/frontend/build')))
-    res.sendFile(path.resolve(path_to_root_folder, "frontend", "dist", "index.html"));
+    res.sendFile(path.join(path_to_root_folder, "frontend", "build", "index.html"));
   })
 } else {
   app.get("/", (req, res, next) => {
